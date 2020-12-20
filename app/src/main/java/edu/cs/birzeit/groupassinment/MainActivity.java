@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             ca[i]=phone.phones[i].getDescription();
         }
         recycler.setLayoutManager(new LinearLayoutManager(this));
-        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(captions, ids,ca);
+        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(captions, ids,ca,this);
         recycler.setAdapter(adapter);
     }
 }
