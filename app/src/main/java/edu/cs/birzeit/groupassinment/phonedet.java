@@ -10,15 +10,13 @@ public class phonedet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phonedet);
-
+        TextView txtDesc = (TextView) findViewById(R.id.txtDesc);
         //Intent intent = getIntent();
         //int id = (int)intent.getExtras().get("phone_id");
-
         //phone phones = phone.phones[id];
-
-        String de= getIntent().getStringExtra("des");
-        TextView txtDesc= (TextView)findViewById(R.id.txtDesc);
-        txtDesc.setText(de);
-
+        if(getIntent().hasExtra("des")) {
+            String de = getIntent().getStringExtra("des");
+            txtDesc.setText(de);
+        }
     }
 }

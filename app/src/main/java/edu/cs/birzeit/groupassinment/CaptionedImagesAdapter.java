@@ -11,15 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import android.widget.Toast;
 import androidx.core.content.ContextCompat;
-public class CaptionedImagesAdapter
-        extends RecyclerView.Adapter<CaptionedImagesAdapter.ViewHolder>{
-
+public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImagesAdapter.ViewHolder>{
     private String[] captions;
     private int[] imageIds;
-    private String[]desc;
+    private String[]Desc;
     private Context context;
 
     public CaptionedImagesAdapter(String[] captions, int[] imageIds){
@@ -48,7 +45,7 @@ public class CaptionedImagesAdapter
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(context,phonedet.class);
-                intent.putExtra("des",desc[position]);
+                intent.putExtra("des",Desc[position]);
                 context.startActivity(intent);
             }
         });
