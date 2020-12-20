@@ -3,12 +3,15 @@ package edu.cs.birzeit.groupassinment;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import android.widget.Toast;
 import androidx.core.content.ContextCompat;
 public class CaptionedImagesAdapter
@@ -16,6 +19,8 @@ public class CaptionedImagesAdapter
 
     private String[] captions;
     private int[] imageIds;
+    private String[]desc;
+    private Context context;
 
     public CaptionedImagesAdapter(String[] captions, int[] imageIds){
         this.captions = captions;
@@ -29,7 +34,7 @@ public class CaptionedImagesAdapter
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         CardView cardView = holder.cardView;
         ImageView imageView = (ImageView) cardView.findViewById(R.id.image);
         Drawable dr = ContextCompat.getDrawable(cardView.getContext(), imageIds[position]);
@@ -42,7 +47,9 @@ public class CaptionedImagesAdapter
         cardView.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //
+                Intent intent = new Intent(context,phonedet.class);
+                intent.putExtra("des",desc[position]);
+                context.startActivity(intent);
             }
         });
     }
