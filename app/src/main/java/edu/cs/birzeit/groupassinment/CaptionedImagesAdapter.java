@@ -19,9 +19,10 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
     private String[]Desc;
     private Context context;
 
-    public CaptionedImagesAdapter(String[] captions, int[] imageIds){
+    public CaptionedImagesAdapter(String[] captions, int[] imageIds,String [] Desc){
         this.captions = captions;
         this.imageIds = imageIds;
+        this.Desc=Desc;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

@@ -16,13 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
         String[] captions = new String[phone.phones.length];
         int[] ids = new int[phone.phones.length];
-
+         String [] ca=new String[phone.phones.length];
         for(int i = 0; i<captions.length;i++){
             captions[i] = phone.phones[i].getName();
             ids[i] = phone.phones[i].getImageID();
+            ca[i]=phone.phones[i].getDescription();
         }
         recycler.setLayoutManager(new LinearLayoutManager(this));
-        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(captions, ids);
+        CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(captions, ids,ca);
         recycler.setAdapter(adapter);
     }
 }
